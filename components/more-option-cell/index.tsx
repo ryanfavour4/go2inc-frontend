@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import MoreDotVertical from "@/components/svg/more-dot-vertical";
 import { useClickAway } from "react-use";
-import { Row } from "@tanstack/react-table";
 import { MoreOverlayMenu } from "@/components/more-overlay-menu";
 
 type T_MoreOptionCell = {
-    row: Row<unknown>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    row: any;
     onEdit?: boolean;
     onView?: boolean;
     onDelete?: boolean;
