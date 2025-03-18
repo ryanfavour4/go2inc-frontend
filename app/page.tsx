@@ -1,6 +1,6 @@
 import Layouts from "@/layout/layout";
-import { HomeVideoCard } from "./home-video-card";
-import { LinkImageCard } from "./link-image-card";
+import { HomeVideoCard } from "./_components/home-video-card";
+import { LinkImageCard } from "./_components/link-image-card";
 
 export default function Home() {
     return (
