@@ -5,14 +5,28 @@ import Input from "@/components/input";
 import Logo from "@/components/svg/logo";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { postLoginService } from "@/api-services/auth.service";
+import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
 
 export default function Login() {
     const [email, setEmail] = useState<IInputState>({ value: "" });
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        router.push("#");
+        if (loading) return;
+        setLoading(true);
+        postLoginService({ email: email.value })
+            .then((res) => {
+                console.log(res);
+                router.push("/");
+                setLoading(false);
+            })
+            .catch((err) => {
+                setLoading(false);
+                alert(err.message);
+            });
     };
 
     return (
@@ -45,8 +59,13 @@ export default function Login() {
                         </div>
 
                         <div>
-                            <button type="submit" className="btn-primary flex items-center gap-2">
-                                Submit
+                            <button
+                                disabled={loading}
+                                type="submit"
+                                className="btn-primary flex items-center gap-2"
+                            >
+                                <p>Submit</p>
+                                {loading && <SpinnerSemicircle className="animate-spin" />}
                             </button>
                         </div>
                     </form>
