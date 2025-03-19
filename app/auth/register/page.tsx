@@ -1,10 +1,12 @@
-"use client"
+"use client";
 import Link from "next/link";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { IInputState } from "@/components/input/useInput";
 import Input from "@/components/input";
 import Logo from "@/components/svg/logo";
 import { useRouter } from "next/navigation";
+import { postRegisterService } from "@/api-services/auth.service";
+import Checkbox from "@/components/checkbox";
 
 export default function Register() {
     const [name, setName] = useState<IInputState>({ value: "" });
@@ -12,11 +14,42 @@ export default function Register() {
     const [kingsChatId, setKingsChatId] = useState({ value: "" });
     const [zone, setZone] = useState({ value: "" });
     const [church, setChurch] = useState({ value: "" });
+    const [designation, setDesignation] = useState<string[]>([]);
+    const [loading, setLoading] = useState(false);
     const router = useRouter();
 
-    const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    const toggleDesignation = (e: ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.checked);
+        console.log(e.target.value);
+        if (e.target.checked) {
+            setDesignation([...designation, e.target.value]);
+        } else {
+            setDesignation(designation.filter((item) => item !== e.target.value));
+        }
+        console.log(designation);
+    };
+
+    const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        router.push("#");
+        if (loading) return;
+        setLoading(true);
+        postRegisterService({
+            email: email.value,
+            church: church.value,
+            kingsChatId: kingsChatId.value,
+            fullname: name.value,
+            zone: zone.value,
+            designation: designation,
+        })
+            .then((res) => {
+                console.log(res);
+                router.push("/");
+                setLoading(false);
+            })
+            .catch((err) => {
+                setLoading(false);
+                alert(err.message);
+            });
     };
 
     return (
@@ -30,7 +63,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-10 overflow-y-auto rounded-lg border border-primary bg-light px-6 py-6 shadow sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form onSubmit={handleLogin} className="space-y-4">
+                    <form onSubmit={handleRegister} className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block text-sm/6 font-medium">
                                 Name
@@ -112,6 +145,32 @@ export default function Register() {
                                     required={true}
                                     placeholder="Church Name"
                                 />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="" className="block text-sm/6 font-medium">
+                                Designation
+                            </label>
+                            <div className="mt-1">
+                                <div className="flex items-center gap-2">
+                                    <Checkbox
+                                        name="zonal-rep"
+                                        id="zonal-rep"
+                                        onChange={(e) => toggleDesignation(e)}
+                                        value={"zonal-rep"}
+                                    />
+                                    <p>Zonal Rep GO2INC Effectuator</p>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Checkbox
+                                        name="country-rep"
+                                        id="country-rep"
+                                        onChange={(e) => toggleDesignation(e)}
+                                        value={"country-rep"}
+                                    />
+                                    <p>Country Rep GO2INC Effectuator</p>
+                                </div>
                             </div>
                         </div>
 

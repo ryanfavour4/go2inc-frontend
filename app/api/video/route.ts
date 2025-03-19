@@ -1,5 +1,5 @@
+import axiosInstance from "@/config/axios";
 import { getSession, setSession } from "@/lib/sessions/actions";
-import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -8,7 +8,7 @@ export async function POST(req: Request) {
         const { fullname, email, kingsChatId, zone, church, designation } = body;
 
         try {
-            const response = await axios.post(
+            const response = await axiosInstance.post(
                 `${process.env.NEXT_PUBLIC_API_BASEURL}/auth/register`,
                 {
                     email,
