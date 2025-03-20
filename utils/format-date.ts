@@ -60,8 +60,8 @@ export function formatDate(dateString: string) {
 
     // Options for the comma date format
     const optionsComma = { day: "2-digit", month: "short", year: "numeric" };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const commaDateFormat = date
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .toLocaleDateString("en-US", optionsComma as any)
         .replace(/, /, ", ");
 
