@@ -22,7 +22,9 @@ export const MenuItem = ({
         setSubMenuOpen(false);
     }, [clickedNavYPosition]);
 
-    const isActive = pathname === menu.path; // Check if the link is active
+    const isActive =
+        pathname.slice(1).length === menu?.path?.slice(1).length &&
+        pathname.slice(1).includes(menu?.path?.slice(1) || "");
 
     return (
         <li className="my-4 pl-2">

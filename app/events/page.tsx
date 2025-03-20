@@ -2,21 +2,21 @@
 "use client";
 import Layouts from "@/layout/layout";
 import { useEffectOnce } from "react-use";
-import { getVideosService } from "@/api-services/video.service";
 import { useState } from "react";
-import { VideoCard } from "./video-card";
+import { VideoCard } from "./event-card";
 import Link from "next/link";
+import { getEventService } from "@/api-services/event.service";
 
-export default function Videos() {
+export default function Events() {
     const [loading, setLoading] = useState(false);
-    const [videos, setVideos] = useState<any[]>([]);
+    const [events, setEvents] = useState<any[]>([]);
 
     useEffectOnce(() => {
         setLoading(true);
-        getVideosService({ category: 1, page: 1, pageSize: 10 })
+        getEventService({ page: 1, pageSize: 10 })
             .then((res) => {
                 setLoading(false);
-                setVideos(res?.data?.videos);
+                setEvents(res?.data?.events);
             })
             .catch((err) => {
                 setLoading(false);
@@ -28,8 +28,8 @@ export default function Videos() {
         <Layouts>
             <div className="">
                 <div className="flex items-center justify-end px-4 py-4">
-                    <Link className="btn-primary block w-fit px-6 py-2" href={"/videos/create"}>
-                        Create Video
+                    <Link className="btn-primary block w-fit px-6 py-2" href={"/events/create"}>
+                        Create Event
                     </Link>
                 </div>
                 <div className="container grid grid-cols-1 gap-5 px-4 pb-8 md:grid-cols-2 lg:grid-cols-3">
@@ -38,10 +38,10 @@ export default function Videos() {
                             <p>Loading...</p>
                         </div>
                     )}
-                    {!!videos.length && videos?.map((video: any) => <VideoCard key={video?.id} />)}
-                    {!loading && videos.length === 0 && (
+                    {!!events.length && events?.map((event: any) => <VideoCard key={event?.id} />)}
+                    {!loading && events.length === 0 && (
                         <div className="row-span-12 flex h-full w-full items-center justify-center text-center md:col-span-2 lg:col-span-3">
-                            <p>No videos found</p>
+                            <p>No Events found</p>
                         </div>
                     )}
                 </div>

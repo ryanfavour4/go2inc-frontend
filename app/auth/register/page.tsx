@@ -7,6 +7,7 @@ import Logo from "@/components/svg/logo";
 import { useRouter } from "next/navigation";
 import { postRegisterService } from "@/api-services/auth.service";
 import Checkbox from "@/components/checkbox";
+import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
 
 export default function Register() {
     const [name, setName] = useState<IInputState>({ value: "" });
@@ -176,10 +177,12 @@ export default function Register() {
 
                         <div>
                             <button
+                                disabled={loading}
                                 type="submit"
-                                className="btn-primary mt-10 flex items-center gap-2"
+                                className="btn-primary flex items-center gap-2"
                             >
-                                Submit
+                                <p>Submit</p>
+                                {loading && <SpinnerSemicircle className="animate-spin" />}
                             </button>
                         </div>
                     </form>

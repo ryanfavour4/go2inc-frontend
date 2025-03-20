@@ -18,7 +18,7 @@ export default function Select({
             <select
                 name={name}
                 id={name}
-                className={`block w-full rounded-md border-2 bg-white px-3 py-2.5 text-base text-textcolor -outline-offset-1 outline-primary ring-primary/25 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:ring-2 sm:text-sm/6 md:text-sm ${
+                className={`block w-full rounded-md border-2 border-primary/25 bg-white px-3 py-2.5 text-base text-textcolor -outline-offset-1 outline-primary ring-primary/25 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:ring-2 disabled:cursor-not-allowed disabled:bg-gray-100 disabled:text-gray-500 disabled:ring-0 sm:text-sm/6 md:text-sm${
                     state.error ? "border-red-600" : "border-dark/20"
                 } ${className}`}
                 value={state.value}

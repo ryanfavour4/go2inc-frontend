@@ -8,3 +8,11 @@ export const getInitials = (fullName: string) => {
     }, "");
     return initials;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function objToQueryParams(obj: Record<string, any>): string {
+    if (!obj) return "";
+    return Object.keys(obj)
+        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`)
+        .join("&");
+}

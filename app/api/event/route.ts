@@ -5,13 +5,12 @@ export async function GET(req: Request) {
     try {
         const queryUrl = req.url;
         const { searchParams } = new URL(queryUrl);
-        const category = searchParams.get("category");
         const page = searchParams.get("page");
         const pageSize = searchParams.get("pageSize");
 
         try {
             const response = await axiosInstance.get(
-                `${process.env.NEXT_PUBLIC_API_BASEURL}/video?category=${category}&page=${page}&pageSize=${pageSize}`,
+                `${process.env.NEXT_PUBLIC_API_BASEURL}/event/user?page=${page}&pageSize=${pageSize}`,
             );
 
             if (response.status >= 200 && response.status < 300) {
@@ -29,7 +28,7 @@ export async function GET(req: Request) {
                 const { status, data } = error.response;
 
                 return NextResponse.json({
-                    message: "Error while getting video!",
+                    message: "Error while getting events!",
                     status: status,
                     error: data,
                 });
@@ -43,7 +42,7 @@ export async function GET(req: Request) {
         }
     } catch (error) {
         return NextResponse.json({
-            message: "Error trying to get to video db!",
+            message: "Error trying to get to events db!",
             status: 500,
             error: error,
         });
@@ -53,18 +52,16 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { category, link, title, isRecorded, isActive, description } = body;
+        const { name, location, expectedParticipants, eventDate } = body;
 
         try {
             const response = await axiosInstance.post(
-                `${process.env.NEXT_PUBLIC_API_BASEURL}/video/create`,
+                `${process.env.NEXT_PUBLIC_API_BASEURL}/event/create`,
                 {
-                    category,
-                    link,
-                    title,
-                    isRecorded,
-                    isActive,
-                    description,
+                    name,
+                    location,
+                    expectedParticipants,
+                    eventDate,
                 },
             );
 
@@ -83,7 +80,7 @@ export async function POST(req: Request) {
                 const { status, data } = error.response;
 
                 return NextResponse.json({
-                    message: "Error while creating video!",
+                    message: "Error while creating event!",
                     status: status,
                     error: data,
                 });
@@ -97,7 +94,7 @@ export async function POST(req: Request) {
         }
     } catch (error) {
         return NextResponse.json({
-            message: "Error trying to upload video to db!",
+            message: "Error trying to upload event to db!",
             status: 500,
             error: error,
         });
