@@ -8,8 +8,18 @@ export interface GetEventServiceResponse {
 }
 
 export interface Data {
-    events: unknown[];
+    events: EventData[];
     pagination: Pagination;
+}
+
+export interface EventData {
+    id: number;
+    name: string;
+    location: string;
+    expectedParticipants: number;
+    eventDate: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Pagination {
