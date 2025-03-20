@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { getSession } from "@/lib/sessions/actions";
 
 export async function GET() {
- const session: any = await getSession();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const session: any = await getSession();
 
- return NextResponse.json(session);
+    return NextResponse.json(session);
 }
