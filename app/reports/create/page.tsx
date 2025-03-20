@@ -1,16 +1,16 @@
 "use client";
-import { postEventService } from "@/api-services/event.service";
+import { postReportService } from "@/api-services/report.service";
 import Input from "@/components/input";
 import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
 import Layouts from "@/layout/layout";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-export default function CreateEvents() {
-    const [name, setName] = useState({ value: "" });
-    const [location, setLocation] = useState({ value: "" });
-    const [expectedParticipants, setExpectedParticipants] = useState({ value: "1" });
-    const [eventDate, setEventDate] = useState({ value: "" });
+export default function CreateReport() {
+    const [title, setTitle] = useState({ value: "" });
+    const [documentLink, setDocumentLink] = useState({ value: "" });
+    const [videoLink, setVideoLink] = useState({ value: "" });
+    const [description, setDescription] = useState({ value: "" });
 
     const [loading, setLoading] = useState(false);
 
@@ -20,15 +20,15 @@ export default function CreateEvents() {
         e.preventDefault();
         if (loading) return;
         setLoading(true);
-        postEventService({
-            name: name.value,
-            location: location.value,
-            eventDate: eventDate.value,
-            expectedParticipants: Number(expectedParticipants.value),
+        postReportService({
+            title: title.value,
+            description: description.value,
+            documentLink: documentLink.value,
+            videoLink: videoLink.value,
         })
             .then((res) => {
                 console.log(res);
-                router.push("/events");
+                router.push("/reports");
                 setLoading(false);
             })
             .catch((err) => {
@@ -41,71 +41,68 @@ export default function CreateEvents() {
         <Layouts>
             <div className="px-4 py-6">
                 <div className="rounded-lg border bg-white p-5 shadow">
-                    <h3 className="text-lg font-semibold">Create Event</h3>
+                    <h3 className="text-lg font-semibold">Create Report</h3>
                     <form onSubmit={submitEvent} className="mt-10 grid grid-cols-1 md:grid-cols-2">
                         <div>
-                            <label htmlFor="name" className="block text-sm/6 font-medium">
-                                name
+                            <label htmlFor="title" className="block text-sm/6 font-medium">
+                                Title
                             </label>
                             <div className="mt-1">
                                 <Input
-                                    setState={setName}
-                                    state={name}
-                                    name="name"
+                                    setState={setTitle}
+                                    state={title}
+                                    name="title"
                                     type="text"
                                     required={true}
-                                    placeholder="Event Name"
+                                    placeholder="Report Title"
                                     className="w-full md:max-w-sm"
                                 />
                             </div>
                         </div>
                         <div className="mt-5 md:mt-0">
-                            <label htmlFor="location" className="block text-sm/6 font-medium">
-                                Location
+                            <label htmlFor="videoLink" className="block text-sm/6 font-medium">
+                                Video Link
                             </label>
                             <div className="mt-1">
                                 <Input
-                                    setState={setLocation}
-                                    state={location}
-                                    name="location"
+                                    setState={setVideoLink}
+                                    state={videoLink}
+                                    name="videoLink"
                                     type="text"
                                     required={true}
-                                    placeholder="Events Location"
+                                    placeholder="Video Link"
+                                    className="w-full md:max-w-sm"
+                                />
+                            </div>
+                        </div>
+                        <div className="mt-5 md:mt-0">
+                            <label htmlFor="documentLink" className="block text-sm/6 font-medium">
+                                Document Link
+                            </label>
+                            <div className="mt-1">
+                                <Input
+                                    setState={setDocumentLink}
+                                    state={documentLink}
+                                    name="documentLink"
+                                    type="text"
+                                    required={true}
+                                    placeholder="Document Link"
                                     className="w-full md:max-w-sm"
                                 />
                             </div>
                         </div>
                         <div className="mt-5">
-                            <label htmlFor="eventDate" className="block text-sm/6 font-medium">
-                                Event Date
+                            <label htmlFor="description" className="block text-sm/6 font-medium">
+                                Description
                             </label>
                             <div className="mt-1">
                                 <Input
-                                    setState={setEventDate}
-                                    state={eventDate}
-                                    name="eventDate"
-                                    type="date"
+                                    setState={setDescription}
+                                    state={description}
+                                    name="description"
+                                    type="text"
                                     required={true}
-                                    placeholder="Set Your Event date"
-                                    className="w-full md:max-w-sm"
-                                />
-                            </div>
-                        </div>
-                        <div className="mt-5">
-                            <label
-                                htmlFor="expectedParticipants"
-                                className="block text-sm/6 font-medium"
-                            >
-                                Expected Participant / Visitors
-                            </label>
-                            <div className="mt-1">
-                                <Input
-                                    setState={setExpectedParticipants}
-                                    state={expectedParticipants}
-                                    name="expectedParticipants"
-                                    type="number"
-                                    required={true}
-                                    placeholder="Number of people expected for your event"
+                                    placeholder="Video Description"
                                     className="w-full md:max-w-sm"
                                 />
                             </div>

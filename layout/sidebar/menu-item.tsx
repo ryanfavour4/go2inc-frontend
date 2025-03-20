@@ -22,9 +22,15 @@ export const MenuItem = ({
         setSubMenuOpen(false);
     }, [clickedNavYPosition]);
 
-    const isActive =
-        pathname.slice(1).length === menu?.path?.slice(1).length &&
-        pathname.slice(1).includes(menu?.path?.slice(1) || "");
+    const isActive = (() => {
+        // check if the current path is related to the current menu path and not just the default path, eg: the path can be "/videos" or "/videos/create" you can return true, but if the path is just "/" or "/dashboard" alone without anything added in front, which is the default path then return false
+        if (menu.path && menu.path !== "/") {
+            if (pathname.includes(menu.path)) return true;
+            return false;
+        }
+        // check if the current path is just "/" or "/dashboard" alone without anything added in front, which is the default path
+        if (menu.path === "/" && pathname === "/") return true;
+    })();
 
     return (
         <li className="my-4 pl-2">

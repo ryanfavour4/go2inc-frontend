@@ -3,6 +3,7 @@ import { JSX, useEffect, useRef, useState } from "react";
 import DashboardSquares from "@/components/svg/dashboard-squares";
 import Video from "@/components/svg/video";
 import EventCalender from "@/components/svg/event-calender";
+import File from "@/components/svg/file";
 
 export type T_menuChildren = {
     title: string;
@@ -42,6 +43,12 @@ export default function useSidebar() {
                     title: "Events",
                     path: "/events",
                     icon: <EventCalender className="text-2xl" />,
+                },
+
+                {
+                    title: "Reports",
+                    path: "/reports",
+                    icon: <File className="text-2xl" />,
                 },
             ],
         },
