@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Layouts from "@/layout/layout";
 import { useEffectOnce } from "react-use";
-import { getVideosService } from "@/api-services/video.service";
+import { getVideosService, VideosData } from "@/api-services/video.service";
 import { useState } from "react";
 import { VideoCard } from "./video-card";
 import Link from "next/link";
 
 export default function Videos() {
     const [loading, setLoading] = useState(false);
-    const [videos, setVideos] = useState<any[]>([]);
+    const [videos, setVideos] = useState<VideosData[]>([]);
 
     useEffectOnce(() => {
         setLoading(true);
@@ -38,7 +37,15 @@ export default function Videos() {
                             <p>Loading...</p>
                         </div>
                     )}
-                    {!!videos.length && videos?.map((video: any) => <VideoCard key={video?.id} />)}
+                    {!!videos.length &&
+                        videos?.map((video) => (
+                            <VideoCard
+                                description={video.description}
+                                title={video.title}
+                                videoUrl={video.link}
+                                key={video?.id}
+                            />
+                        ))}
                     {!loading && videos.length === 0 && (
                         <div className="row-span-12 flex h-full w-full items-center justify-center text-center md:col-span-2 lg:col-span-3">
                             <p>No videos found</p>

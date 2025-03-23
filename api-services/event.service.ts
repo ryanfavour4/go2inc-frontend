@@ -57,3 +57,21 @@ export const postEventService = async (credentials: {
 
     return response;
 };
+
+export const putEventService = async (credentials: {
+    id: string;
+    name: string;
+    location: string;
+    expectedParticipants: number;
+    eventDate: string;
+}) => {
+    const response = await axios.put("/api/event/edit", credentials);
+    const res = response.data;
+
+    if (res.status < 200 || res.status >= 300) {
+        const errorMessage = res.error?.message || res.message || "Something went wrong";
+        throw new Error(errorMessage);
+    }
+
+    return response;
+};
