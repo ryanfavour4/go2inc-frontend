@@ -16,7 +16,7 @@ export function HeaderNav() {
                     <Link href="#" className="hover:text-secondary">
                         Resources
                     </Link>
-                    <Link href="#" className="hover:text-secondary">
+                    <Link href="/videos" className="hover:text-secondary">
                         Videos
                     </Link>
                     <Link href="/contact" className="hover:text-secondary">

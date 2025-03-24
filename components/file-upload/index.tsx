@@ -1,5 +1,6 @@
 import React, { DragEvent, InputHTMLAttributes, useEffect, useState } from "react";
 import CloseX from "../svg/close-x";
+import Image from "next/image";
 
 export type FileUploaderVariant = "default" | "dropzone";
 
@@ -115,7 +116,13 @@ const FileUpload: React.FC<FileUploaderProps> = ({
                         key={index}
                         className="image-fit zoom-in relative hidden h-16 w-16 cursor-pointer"
                     >
-                        <img className="h-16 w-16 rounded-md" alt="" src={url} />
+                        <Image
+                            width={64}
+                            height={64}
+                            className="h-16 w-16 rounded-md"
+                            alt=""
+                            src={url}
+                        />
                         <button
                             title="Remove this image?"
                             className="bg-danger btn absolute right-0 top-0 -mr-2 -mt-2 flex h-5 w-5 items-center justify-center rounded-full bg-error p-0 text-white"

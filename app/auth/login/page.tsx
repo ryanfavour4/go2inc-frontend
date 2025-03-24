@@ -20,7 +20,7 @@ export default function Login() {
         postLoginService({ email: email.value })
             .then((res) => {
                 console.log(res);
-                router.push("/");
+                router.push("/home");
                 setLoading(false);
             })
             .catch((err) => {

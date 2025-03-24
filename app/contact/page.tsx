@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { HeaderNav } from "../landing/header-nav";
+import { HeaderNav } from "../_components/header-nav";
 import Input from "@/components/input";
+import FooterSection from "../_components/footer-section";
 
 export default function Contact() {
     const [name, setName] = useState({ value: "" });
@@ -158,6 +159,8 @@ export default function Contact() {
                     </div>
                 </div>
             </section>
+
+            <FooterSection />
         </>
     );
 }

@@ -44,7 +44,7 @@ export default function Register() {
         })
             .then((res) => {
                 console.log(res);
-                router.push("/");
+                router.push("/home");
                 setLoading(false);
             })
             .catch((err) => {

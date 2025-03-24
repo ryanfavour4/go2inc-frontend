@@ -18,10 +18,10 @@ export default function NotFound() {
                         </p>
                         <p className="mb-4 text-base font-light text-textcolor">
                             Sorry, we can&apos;t find that page. You&apos;ll find lots to explore on
-                            the dashboard.{" "}
+                            the home page.{" "}
                         </p>
                         <Link href={"/"} className="btn-primary mx-auto w-fit">
-                            Back to Dashboard
+                            Back Home
                         </Link>
                     </div>
                 </div>
