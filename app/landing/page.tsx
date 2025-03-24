@@ -313,12 +313,14 @@ const Home = () => {
                     />
                     <div className="mt-4 md:mt-0">
                         <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
-                            Let&apos;s create more tools and ideas that brings us together.
+                            Be a Part of the Mission – Get Started Today!{" "}
                         </h2>
                         <p className="mb-6 font-light text-gray-500 md:text-lg">
-                            Flowbite helps you connect with friends and communities of people who
-                            share your interests. Connecting with your friends and family as well as
-                            discovering new ones is easy with features like Groups.
+                            Join GO2INC in reaching and transforming lives across inner cities,
+                            orphanages, refugee camps, and underserved communities. Whether
+                            you&apos;re launching an outreach, submitting reports, or accessing
+                            training, you&apos;re making an eternal impact. Take the next step and
+                            be part of the mission today!
                         </p>
                         <Link
                             href="/auth/login"
@@ -342,12 +344,12 @@ const Home = () => {
                 </div>
             </section>
 
-            <footer className="bg-dark/75 text-light">
-                <div className="container">
+            <footer className="bg-dark text-light">
+                <div className="container px-4">
                     <Link href={"/"} className={`mb-8 flex w-fit flex-col items-center gap-1`}>
                         <Logo className={`h-20 w-20 py-2 text-secondary`} />
                     </Link>
-                    <div className="grid w-full grid-cols-6">
+                    <div className="grid w-full pb-6 md:grid-cols-6">
                         <div className="col-span-2">
                             <h2 className="title-font mb-3 text-sm font-medium tracking-widest text-light">
                                 DASHBOARD
@@ -382,12 +384,11 @@ const Home = () => {
 
                         <div className="col-span-4 flex flex-col items-start gap-2">
                             <div className="relative mr-2 w-40 sm:mr-4 sm:w-64">
-                                <label htmlFor="footer-field" className="text-sm leading-7">
-                                    Newsletter Email
-                                </label>
+                                <h2 className="title-font mb-3 text-sm font-medium tracking-widest text-light">
+                                    NEWSLETTER EMAIL
+                                </h2>
                                 <input
-                                    type="text"
-                                    id="email"
+                                    type="email"
                                     name="email"
                                     className="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 px-3 py-1 text-base leading-8 text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary focus:bg-transparent focus:ring-2 focus:ring-primary/25"
                                 />
@@ -398,7 +399,7 @@ const Home = () => {
                             >
                                 Submit
                             </button>
-                            <small className="mt-2 text-center text-sm text-light/50 sm:text-left md:ml-6 md:mt-0">
+                            <small className="">
                                 Subscribe to our newsletter to stay up to date with our latest
                                 updates. We promise to never spam you.
                             </small>
