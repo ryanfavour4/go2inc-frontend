@@ -312,10 +312,10 @@ const Home = () => {
                         alt="dashboard image"
                     />
                     <div className="mt-4 md:mt-0">
-                        <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">
+                        <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
                             Be a Part of the Mission – Get Started Today!{" "}
                         </h2>
-                        <p className="mb-6 font-light text-gray-500 md:text-lg">
+                        <p className="mb-6 md:text-base">
                             Join GO2INC in reaching and transforming lives across inner cities,
                             orphanages, refugee camps, and underserved communities. Whether
                             you&apos;re launching an outreach, submitting reports, or accessing
