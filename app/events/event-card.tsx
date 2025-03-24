@@ -1,8 +1,8 @@
 import Modal from "@/components/modal";
 import { useModal } from "@/components/modal/useModal";
 import Logo from "@/components/svg/logo";
-import PenEdit from "@/components/svg/pen-edit";
-import TrashDelete from "@/components/svg/trash-delete";
+// import PenEdit from "@/components/svg/pen-edit";
+// import TrashDelete from "@/components/svg/trash-delete";
 import { formatDate } from "@/utils/format-date";
 
 type EventCardProps = {
@@ -13,7 +13,7 @@ type EventCardProps = {
 };
 
 export function EventCard({ date, expectedParticipants, location, name }: EventCardProps) {
-    const { closeModal, isModalClosed, openModal } = useModal();
+    const { closeModal, isModalClosed } = useModal();
 
     return (
         <>
@@ -41,14 +41,14 @@ export function EventCard({ date, expectedParticipants, location, name }: EventC
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3 pt-4">
+                {/* <div className="flex items-center gap-3 pt-4">
                     <button onClick={openModal} className="btn w-fit p-1.5 text-2xl text-secondary">
                         <PenEdit />
                     </button>
                     <button className="btn w-fit p-1.5 text-2xl text-secondary">
                         <TrashDelete />
                     </button>
-                </div>
+                </div> */}
             </div>
             <Modal closeModal={closeModal} isModalClosed={isModalClosed}>
                 <EventEditModal />
