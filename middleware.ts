@@ -2,7 +2,7 @@ import { getSession } from "@/lib/sessions/actions";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const protectedRoutes = ["/", "/events", "/videos", "/reports"];
+const protectedRoutes = ["/home", "/events", "/videos", "/reports"];
 
 export async function middleware(req: NextRequest) {
     const session = await getSession();
@@ -15,7 +15,7 @@ export async function middleware(req: NextRequest) {
             return NextResponse.redirect(reloadUrl);
         }
 
-        const redirectUrl = new URL("/landing", req.url);
+        const redirectUrl = new URL("/auth/login", req.url);
         return NextResponse.redirect(redirectUrl);
     }
 

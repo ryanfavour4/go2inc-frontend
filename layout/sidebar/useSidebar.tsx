@@ -29,7 +29,7 @@ export default function useSidebar() {
             children: [
                 {
                     title: "Home",
-                    path: "/",
+                    path: "/home",
                     icon: <DashboardSquares className="text-2xl" />,
                 },
 
