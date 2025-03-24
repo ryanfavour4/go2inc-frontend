@@ -129,6 +129,20 @@ button:disabled {
     border-radius: 10px;
 }
 
+.clip-blob {
+    -webkit-mask-image: url("/blob.png");
+    mask-image: url("/blob.png");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    mask-border: 2px solid red;
+}
+
+.bg-pattern-hero {
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("/bg-pattern.jpg");
+}
+
 @media only screen and (max-width: 650px) {
     body {
         font-size: 14px;
@@ -139,9 +153,3 @@ button:disabled {
         width: 30px;
     }
 }
-
-/* 
-status 
-demurrage-amount 
-area-boys-charge 
-*/

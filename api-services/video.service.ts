@@ -8,8 +8,20 @@ export interface GetVideosServiceResponse {
 }
 
 export interface Data {
-    videos: unknown[];
+    videos: VideosData[];
     pagination: Pagination;
+}
+
+export interface VideosData {
+    id: number;
+    category: string;
+    link: string;
+    title: string;
+    isRecorded: boolean;
+    isActive: boolean;
+    description: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Pagination {

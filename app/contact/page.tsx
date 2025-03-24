@@ -83,11 +83,16 @@ export default function Contact() {
                                 <button className="btn-primary m-auto max-w-xs">Button</button>
                             </div>
                             <div className="mt-8 w-full border-t border-gray-200 p-2 pt-8 text-center">
-                                <a className="text-pretty">example@email.com</a>
+                                <a
+                                    href="mailto:info@theinnercitymission.ngo"
+                                    className="text-pretty"
+                                >
+                                    info@theinnercitymission.ngo
+                                </a>
                                 <p className="my-5 leading-normal">
-                                    49 Smith St.
+                                    15-17 Ize Iyamu St, Off Billings Way,
                                     <br />
-                                    Saint Cloud, MN 56301
+                                    Oregun, Lagos, Nigeria
                                 </p>
                                 <span className="inline-flex">
                                     <a className="text-gray-500">

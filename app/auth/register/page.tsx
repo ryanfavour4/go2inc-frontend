@@ -60,7 +60,7 @@ export default function Register() {
                     <Link href={"/"}>
                         <Logo className="h-40 w-40 py-3 text-primary" />
                     </Link>
-                    <h2 className="text-center text-lg/9 font-bold">Register to Go to INC.</h2>
+                    <h2 className="text-center text-lg/9 font-bold">Register to Go2Inc.</h2>
                 </div>
 
                 <div className="mt-10 overflow-y-auto rounded-lg border border-primary bg-light px-6 py-6 shadow sm:mx-auto sm:w-full sm:max-w-sm">

@@ -6,7 +6,7 @@ const protectedRoutes = ["/", "/events", "/videos", "/reports"];
 
 export async function middleware(req: NextRequest) {
     const session = await getSession();
-
+    console.log(session);
     if (!session.isLoggedIn && protectedRoutes.includes(req.nextUrl.pathname)) {
         // Check if this is the first time redirecting to avoid infinite redirects
         if (!req.nextUrl.searchParams.has("reload")) {
