@@ -342,16 +342,13 @@ const Home = () => {
                 </div>
             </section>
 
-            <footer className="body-font bg-dark text-light">
-                <div className="container mx-auto flex flex-col flex-wrap px-5 py-24 md:flex-row md:flex-nowrap md:items-center lg:items-start">
-                    <div className="mx-auto mt-10 w-64 flex-shrink-0 text-center md:mx-0 md:mt-0 md:text-left">
-                        <Link href={"/"} className={`mb-8 flex flex-col items-center gap-1`}>
-                            <Logo className={`h-20 w-20 py-2 text-secondary`} />
-                        </Link>
-                    </div>
-
-                    <div className="grid grid-cols-5">
-                        <div className="">
+            <footer className="bg-dark/75 text-light">
+                <div className="container">
+                    <Link href={"/"} className={`mb-8 flex w-fit flex-col items-center gap-1`}>
+                        <Logo className={`h-20 w-20 py-2 text-secondary`} />
+                    </Link>
+                    <div className="grid w-full grid-cols-6">
+                        <div className="col-span-2">
                             <h2 className="title-font mb-3 text-sm font-medium tracking-widest text-light">
                                 DASHBOARD
                             </h2>
@@ -383,25 +380,25 @@ const Home = () => {
                             </nav>
                         </div>
 
-                        <div className="flex flex-wrap items-end justify-center md:flex-nowrap md:justify-start">
+                        <div className="col-span-4 flex flex-col items-start gap-2">
                             <div className="relative mr-2 w-40 sm:mr-4 sm:w-64">
-                                <label
-                                    htmlFor="footer-field"
-                                    className="text-sm leading-7 text-gray-600"
-                                >
+                                <label htmlFor="footer-field" className="text-sm leading-7">
                                     Newsletter Email
                                 </label>
                                 <input
                                     type="text"
                                     id="email"
                                     name="email"
-                                    className="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 px-3 py-1 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200"
+                                    className="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 px-3 py-1 text-base leading-8 text-dark outline-none transition-colors duration-200 ease-in-out focus:border-primary focus:bg-transparent focus:ring-2 focus:ring-primary/25"
                                 />
                             </div>
-                            <button className="inline-flex rounded border-0 bg-indigo-500 px-6 py-2 text-white hover:bg-indigo-600 focus:outline-none">
-                                Button
+                            <button
+                                disabled
+                                className="inline-flex w-fit rounded border-0 bg-primary px-6 py-2 text-white hover:bg-primary focus:outline-none"
+                            >
+                                Submit
                             </button>
-                            <small className="mt-2 text-center text-sm text-gray-500 sm:text-left md:ml-6 md:mt-0">
+                            <small className="mt-2 text-center text-sm text-light/50 sm:text-left md:ml-6 md:mt-0">
                                 Subscribe to our newsletter to stay up to date with our latest
                                 updates. We promise to never spam you.
                             </small>
@@ -411,12 +408,12 @@ const Home = () => {
 
                 <div className="bg-primary/10">
                     <div className="container mx-auto flex flex-col flex-wrap px-5 py-4 sm:flex-row">
-                        <p className="text-center text-sm text-gray-500 sm:text-left">
+                        <p className="text-center text-sm text-light/70 sm:text-left">
                             © 2025 Go2Inc —
                             <a
                                 href="https://kingschat.online/user/icm4c"
                                 rel="noopener noreferrer"
-                                className="ml-1 text-gray-600"
+                                className="ml-1 text-light/50"
                                 target="_blank"
                             >
                                 @Innercitymission4children
