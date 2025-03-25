@@ -20,7 +20,7 @@ export default function FooterSection() {
                                     href={"/videos"}
                                     className="text-light/75 hover:text-secondary"
                                 >
-                                    Watch Training Videos
+                                    Training Resources
                                 </Link>
                             </li>
                             <li>

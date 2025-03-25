@@ -13,11 +13,14 @@ export function HeaderNav() {
                     <Logo className={`h-20 w-20`} />
                 </Link>
                 <nav className="hidden flex-wrap items-center justify-center gap-4 md:ml-4 md:mr-auto md:flex md:border-l md:border-dark/25 md:py-1 md:pl-4">
-                    <Link href="#" className="hover:text-secondary">
-                        Resources
+                    <Link href="#about" className="hover:text-secondary">
+                        About
                     </Link>
                     <Link href="/videos" className="hover:text-secondary">
-                        Videos
+                        Training Resources
+                    </Link>
+                    <Link href="/report" className="hover:text-secondary">
+                        Report
                     </Link>
                     <Link href="/contact" className="hover:text-secondary">
                         Contact
