@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { postRegisterService } from "@/api-services/auth.service";
 import Checkbox from "@/components/checkbox";
 import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
+import toast from "react-hot-toast";
 
 export default function Register() {
     const [name, setName] = useState<IInputState>({ value: "" });
@@ -44,6 +45,7 @@ export default function Register() {
         })
             .then((res) => {
                 console.log(res);
+                toast.success("Login successful");
                 router.push("/home");
                 setLoading(false);
             })

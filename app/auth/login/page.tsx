@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { postLoginService } from "@/api-services/auth.service";
 import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
+import toast from "react-hot-toast";
 
 export default function Login() {
     const [email, setEmail] = useState<IInputState>({ value: "" });
@@ -20,6 +21,7 @@ export default function Login() {
         postLoginService({ email: email.value })
             .then((res) => {
                 console.log(res);
+                toast.success("Login successful");
                 router.push("/home");
                 setLoading(false);
             })
