@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/context/theme";
+import { Toaster } from "react-hot-toast";
 import "@/styles/globals.css";
 import "@/styles/tailwind.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
                 <ThemeProvider>{children}</ThemeProvider>
                 <div id="portal" />
+                <Toaster />
             </body>
         </html>
     );
