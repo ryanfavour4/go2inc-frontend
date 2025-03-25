@@ -29,6 +29,7 @@ const Home = () => {
         <>
             <HeaderNav />
             <HeroSection />
+
             <section className="bg-pattern-hero relative bg-cover text-gray-600">
                 <div className="container mx-auto flex flex-col items-center px-2 md:flex-row md:gap-10">
                     <div className="relative mb-10 w-10/12">
@@ -105,7 +106,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="body-font bg-primary/10 px-3 py-9">
+            <section id="about" className="body-font bg-primary/10 px-3 py-9">
                 <div className="container rounded-xl bg-white py-8">
                     <h3 className="m-auto max-w-sm text-center text-2xl font-semibold text-primary">
                         Welcome to GO2INC 4.0 – The Gospel Outreach to the Inner Cities!

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Logo from "@/components/svg/logo";
 import Link from "next/link";
 import React from "react";
@@ -13,9 +14,9 @@ export function HeaderNav() {
                     <Logo className={`h-20 w-20`} />
                 </Link>
                 <nav className="hidden flex-wrap items-center justify-center gap-4 md:ml-4 md:mr-auto md:flex md:border-l md:border-dark/25 md:py-1 md:pl-4">
-                    <Link href="#about" className="hover:text-secondary">
+                    <a href="/#about" className="hover:text-secondary">
                         About
-                    </Link>
+                    </a>
                     <Link href="/videos" className="hover:text-secondary">
                         Training Resources
                     </Link>
