@@ -53,7 +53,7 @@ export default function HeroSection() {
                                     />
                                 </div>
                             </div>
-                            <div className="flex w-full flex-col items-center text-center md:text-left">
+                            <div className="flex w-full flex-col items-center text-center md:text-right">
                                 <h1 className="mb-4 text-balance text-3xl font-semibold md:text-5xl">
                                     GO2INC 4.0 - Bringing Hope, Love & Salvation to Inner Cities
                                 </h1>
@@ -64,7 +64,7 @@ export default function HeroSection() {
                                     unwavering faith, we&apos;re transforming lives, one soul at a
                                     time. Be part of this mission today!
                                 </p>
-                                <div className="flex w-full justify-center gap-4 md:justify-start">
+                                <div className="ml-auto flex w-full justify-center gap-4 md:w-fit md:justify-start">
                                     <Link href="/auth/login" className="btn-primary w-fit px-8">
                                         Join Us Now
                                     </Link>
@@ -73,11 +73,6 @@ export default function HeroSection() {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
-                        {/* BOTTOM SECTION */}
-                        <div className="flex flex-col items-center justify-center gap-3 md:gap-8">
-                            <div className="h-[2px] w-full bg-light" />
-                            <small className="text-nowrap">5809 meals donated</small>
                         </div>
                     </div>
                 </div>

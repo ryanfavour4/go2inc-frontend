@@ -1,46 +1,103 @@
-import Image from "next/image";
 import kidsImage from "@/assets/images/kids-smiling.png";
 import stockImage1 from "@/assets/images/stock-image-1.png";
-import stockImage2 from "@/assets/images/stock-image-2.png";
+import stockImage4 from "@/assets/images/stock-image-4.jpg";
 import logo from "@/assets/images/logo.png";
 import Link from "next/link";
 import { HeaderNav } from "./_components/header-nav";
 import FooterSection from "./_components/footer-section";
 import HeroSection from "./_components/hero-section";
+import Image from "next/image";
+import Logo from "@/components/svg/logo";
+import Script from "next/script";
 
 const Home = () => {
+    const targetLocations = [
+        "Inner-city communities",
+        "Orphanage homes, foster homes, and other child care institutions",
+        "Streets",
+        "IDP Camps, Refugee Camps, Immigration Camps",
+        "Correctional institutions and facilities such as Prisons, Remand homes, detention centers, etc.",
+        "Labour camps, factories, etc.",
+        "Disabled Persons Homes for Children and Adults",
+        "Specialized Institutionalized Care Homes",
+        "Community Health Centers",
+        "Homeless Shelters",
+        "Other forms of formal and informal settlements for the indigent",
+    ];
+
     return (
         <>
             <HeaderNav />
             <HeroSection />
             <section className="bg-pattern-hero relative bg-cover text-gray-600">
-                <div className="container mx-auto flex flex-col items-center px-2 py-16 md:flex-row">
+                <div className="container mx-auto flex flex-col items-center px-2 md:flex-row md:gap-10">
                     <div className="relative mb-10 w-10/12">
-                        <div className="clip-blob m-auto">
-                            <Image
-                                width={250}
-                                height={250}
-                                className="h-full w-full bg-contain"
-                                alt="hero"
-                                src={stockImage2}
-                            />
+                        {/* VIDEO */}
+                        <div>
+                            <iframe
+                                src="https://player.vimeo.com/video/1065561755?h=e64fa4dae8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                title="GO2INC for Church Planters"
+                                className="relative mx-auto flex h-[250px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-dashed border-transparent bg-transparent md:h-[500px]"
+                            ></iframe>
                         </div>
+                        <Script src="https://player.vimeo.com/api/player.js"></Script>
                     </div>
-                    <div className="flex w-full flex-col items-center text-center md:text-left">
-                        <h1 className="mb-4 text-balance text-3xl font-semibold text-primary md:text-5xl">
-                            GO2INC 4.0 - Bringing Hope, Love & Salvation to Inner Cities
-                        </h1>
+                    <div className="flex w-full flex-col text-center md:text-left">
+                        <h3 className="mb-4 text-balance text-xl font-semibold text-primary md:text-2xl">
+                            GO2INC for Church Planters
+                        </h3>
                         <p className="mb-8 leading-relaxed">
-                            Join GO2INC 4.0—a global movement committed to reaching over 3.4 billion
-                            indigent individuals with the life-changing power of the Gospel. Through
-                            strategic outreaches, humanitarian aid, and unwavering faith, we&apos;re
-                            transforming lives, one soul at a time. Be part of this mission today!
+                            Discover powerful strategies for church planting and outreach as this
+                            training explores how to effectively reach and transform indigent
+                            communities worldwide. Learn how to leverage the Inner City Mission to
+                            spread the Gospel, provide humanitarian aid, and impact millions in
+                            underserved areas. Gain insights, tools, and inspiration to fulfil the
+                            mission of taking the Gospel to all nations
                         </p>
                         <div className="flex w-full justify-center gap-4 md:justify-start">
                             <Link href="/auth/login" className="btn-primary w-fit px-8">
                                 Join Us Now
                             </Link>
-                            <Link href="/videos" className="btn-white w-fit px-8">
+                            <Link href="/auth/login" className="btn-white w-fit px-8">
+                                Register Outreach
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-pattern-hero relative bg-cover text-gray-600">
+                <div className="container mx-auto flex flex-col items-center px-2 pb-16 md:flex-row md:gap-10">
+                    <div className="relative mb-10 w-10/12">
+                        {/* VIDEO */}
+                        <div>
+                            <iframe
+                                src="https://player.vimeo.com/video/1068814156?h=f7b2e9f20a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                title="GO2INC for Cell Leaders"
+                                className="relative mx-auto flex h-[250px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-dashed border-transparent bg-transparent md:h-[500px]"
+                            ></iframe>
+                        </div>
+                        <Script src="https://player.vimeo.com/api/player.js"></Script>
+                    </div>
+                    <div className="flex w-full flex-col text-center md:text-left">
+                        <h3 className="mb-4 text-balance text-xl font-semibold text-primary md:text-2xl">
+                            GO2INC for Cell Leaders
+                        </h3>
+                        <p className="mb-8 leading-relaxed">
+                            Step into your divine calling as a cell leader with GO2INC for Cell
+                            Leaders. This dynamic session equips you with strategic insights,
+                            practical tools, and a renewed vision to grow and strengthen your cell
+                            group. Learn how to inspire, disciple, and expand your reach as you take
+                            the Gospel further. Elevate your leadership, impact lives, and drive
+                            unstoppable growth in your ministry!
+                        </p>
+                        <div className="flex w-full justify-center gap-4 md:justify-start">
+                            <Link href="/auth/login" className="btn-primary w-fit px-8">
+                                Join Us Now
+                            </Link>
+                            <Link href="/auth/login" className="btn-white w-fit px-8">
                                 Register Outreach
                             </Link>
                         </div>
@@ -256,149 +313,44 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="body-font text-gray-600">
-                <div className="container mx-auto flex flex-wrap px-5 py-24">
-                    <div className="flex w-full flex-wrap">
+            <section className="">
+                <div className="container mx-auto flex flex-wrap px-5 py-16">
+                    <div className="mb-5 flex w-full flex-col items-center gap-2">
+                        <h3 className="m-auto max-w-sm text-center text-2xl font-semibold text-secondary">
+                            Where Can Go2Inc Be Organized
+                        </h3>
+
+                        <p className="m-auto mt-4 max-w-lg text-center">
+                            GO2INC events can be hosted in the following official locations.
+                        </p>
+                    </div>
+
+                    <div className="flex w-full flex-wrap justify-between border-t pt-6">
                         <div className="md:w-1/2 md:py-6 md:pr-10 lg:w-2/5">
-                            <div className="relative flex pb-12">
-                                <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
-                                    <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
-                                </div>
-                                <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    </svg>
-                                </div>
-                                <div className="flex-grow pl-4">
-                                    <h2 className="title-font mb-1 text-sm font-medium tracking-wider text-gray-900">
-                                        STEP 1
-                                    </h2>
-                                    <p className="leading-relaxed">
-                                        VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                                        Kinfolk bespoke try-hard cliche palo santo offal.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="relative flex pb-12">
-                                <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
-                                    <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
-                                </div>
-                                <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                                    </svg>
-                                </div>
-                                <div className="flex-grow pl-4">
-                                    <h2 className="title-font mb-1 text-sm font-medium tracking-wider text-gray-900">
-                                        STEP 2
-                                    </h2>
-                                    <p className="leading-relaxed">
-                                        Vice migas literally kitsch +1 pok pok. Truffaut hot chicken
-                                        slow-carb health goth, vape typewriter.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="relative flex pb-12">
-                                <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
-                                    <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
-                                </div>
-                                <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <circle cx="12" cy="5" r="3"></circle>
-                                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
-                                    </svg>
-                                </div>
-                                <div className="flex-grow pl-4">
-                                    <h2 className="title-font mb-1 text-sm font-medium tracking-wider text-gray-900">
-                                        STEP 3
-                                    </h2>
-                                    <p className="leading-relaxed">
-                                        Coloring book nar whal glossier master cleanse umami. Salvia
-                                        +1 master cleanse blog taiyaki.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="relative flex pb-12">
-                                <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
-                                    <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
-                                </div>
-                                <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                                        <circle cx="12" cy="7" r="4"></circle>
-                                    </svg>
-                                </div>
-                                <div className="flex-grow pl-4">
-                                    <h2 className="title-font mb-1 text-sm font-medium tracking-wider text-gray-900">
-                                        STEP 4
-                                    </h2>
-                                    <p className="leading-relaxed">
-                                        VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                                        Kinfolk bespoke try-hard cliche palo santo offal.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="relative flex">
-                                <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                                        <path d="M22 4L12 14.01l-3-3"></path>
-                                    </svg>
-                                </div>
-                                <div className="flex-grow pl-4">
-                                    <h2 className="title-font mb-1 text-sm font-medium tracking-wider text-gray-900">
-                                        FINISH
-                                    </h2>
-                                    <p className="leading-relaxed">
-                                        Pitchfork ugh tattooed scenester echo park gastropub
-                                        whatever cold-pressed retro.
-                                    </p>
-                                </div>
-                            </div>
+                            {targetLocations.map((location) => {
+                                return (
+                                    <div key={location} className="relative flex pb-12">
+                                        <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
+                                            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+                                        </div>
+                                        <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-primary bg-white text-white shadow">
+                                            <Logo className="w-10" />
+                                        </div>
+                                        <div className="flex flex-grow items-center pl-4">
+                                            <h2 className="title-font text-base font-medium capitalize tracking-wider text-dark">
+                                                {location}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                         <Image
-                            className="mt-12 rounded-lg object-cover object-center md:mt-0 md:w-1/2 lg:w-3/5"
-                            src="https://dummyimage.com/1200x500"
+                            width={250}
+                            height={250}
+                            className="mt-12 w-full rounded-lg object-cover object-center md:mt-0 md:w-1/2"
+                            unoptimized
+                            src={stockImage4}
                             alt="step"
                         />
                     </div>
