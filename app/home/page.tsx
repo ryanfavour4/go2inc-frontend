@@ -17,7 +17,7 @@ export default function Home() {
                             link="/videos"
                         />
                         <LinkImageCard
-                            title="Submit Outreach Report"
+                            title="Register Outreach"
                             description="Ensure proper tracking and follow-up by submitting your GO2INC outreach report. Share your impact, testimonies, and key details to help advance the mission."
                             link="/reports"
                         />

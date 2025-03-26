@@ -66,7 +66,7 @@ export default function HeroSection() {
                                 </p>
                                 <div className="ml-auto flex w-full justify-center gap-4 md:w-fit md:justify-start">
                                     <Link href="/auth/login" className="btn-primary w-fit px-8">
-                                        Join Us Now
+                                        Join the training
                                     </Link>
                                     <Link href="/videos" className="btn-white w-fit px-8">
                                         Register Outreach

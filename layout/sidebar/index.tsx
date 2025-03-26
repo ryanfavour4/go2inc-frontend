@@ -33,7 +33,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: TLayoutProps) {
                     }`}
                 >
                     <Link
-                        href={"#"}
+                        href={"/"}
                         className={`mb-8 flex flex-col items-center gap-1 ${
                             dockSideBar && "md:hidden"
                         }`}

@@ -30,10 +30,10 @@ const Home = () => {
             <HeaderNav />
             <HeroSection />
 
-            <section className="bg-pattern-hero relative bg-cover text-gray-600">
+            {/* VIDEOS */}
+            {/* <section className="bg-pattern-hero relative bg-cover text-gray-600">
                 <div className="container mx-auto flex flex-col items-center px-2 md:flex-row md:gap-10">
                     <div className="relative mb-10 w-10/12">
-                        {/* VIDEO */}
                         <div>
                             <iframe
                                 src="https://player.vimeo.com/video/1065561755?h=e64fa4dae8&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -71,7 +71,6 @@ const Home = () => {
             <section className="bg-pattern-hero relative bg-cover text-gray-600">
                 <div className="container mx-auto flex flex-col items-center px-2 pb-16 md:flex-row md:gap-10">
                     <div className="relative mb-10 w-10/12">
-                        {/* VIDEO */}
                         <div>
                             <iframe
                                 src="https://player.vimeo.com/video/1068814156?h=f7b2e9f20a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -102,6 +101,26 @@ const Home = () => {
                                 Register Outreach
                             </Link>
                         </div>
+                    </div>
+                </div>
+            </section> */}
+
+            <section className="body-font bg-primary/10 px-3 py-9">
+                <div className="container rounded-xl bg-white py-8">
+                    <h3 className="m-auto max-w-sm text-center text-2xl font-semibold text-primary">
+                        GO2INC 4.0 Outreach
+                    </h3>
+
+                    <div className="relative m-auto mb-10 mt-10 w-[90%] md:mt-0 lg:mt-8">
+                        <div>
+                            <iframe
+                                src="https://player.vimeo.com/video/1069559842?h=c363242a1a&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                                title="GO2INC OUTREACH PROMO"
+                                className="relative mx-auto flex h-[300px] w-[100%] !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-dashed border-transparent bg-transparent md:h-[550px]"
+                            ></iframe>
+                        </div>
+                        <Script src="https://player.vimeo.com/api/player.js" />
                     </div>
                 </div>
             </section>
