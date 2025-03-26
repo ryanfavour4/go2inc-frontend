@@ -43,7 +43,7 @@ export function HeaderNav() {
                     href={auth?.isLoggedIn ? "/home" : "/auth/login"}
                     className="btn-primary w-fit px-6 py-1.5"
                 >
-                    Join Us
+                    Take Training
                 </Link>
             </div>
         </header>

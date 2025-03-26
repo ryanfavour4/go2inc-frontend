@@ -80,7 +80,7 @@ export default function HeroSection() {
                                         href={auth?.isLoggedIn ? "/home" : "/auth/login"}
                                         className="btn-primary w-fit px-8"
                                     >
-                                        Join the training
+                                        Take the training
                                     </Link>
                                     <Link
                                         href={auth?.isLoggedIn ? "/events" : "/auth/login"}

@@ -435,7 +435,7 @@ const Home = () => {
                     />
                     <div className="mt-4 md:mt-0">
                         <h2 className="mb-4 text-3xl font-extrabold tracking-tight">
-                            Be a Part of the Mission – Get Started Today!{" "}
+                            Be a Part of the Mission – Get Started Today!
                         </h2>
                         <p className="mb-6 md:text-base">
                             Join GO2INC in reaching and transforming lives across inner cities,
@@ -445,7 +445,7 @@ const Home = () => {
                             be part of the mission today!
                         </p>
                         <Link
-                            href="/auth/login"
+                            href="/events"
                             className="inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-center text-sm font-medium text-white focus:ring-4"
                         >
                             Register an Outreach

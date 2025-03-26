@@ -40,7 +40,7 @@ export default function useSidebar() {
                 },
 
                 {
-                    title: "Events",
+                    title: "Outreach",
                     path: "/events",
                     icon: <EventCalender className="text-2xl" />,
                 },
