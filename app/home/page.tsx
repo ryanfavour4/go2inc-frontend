@@ -18,6 +18,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-4 md:col-span-2">
                         <VideoCard
+                            className="max-w-full"
                             description=""
                             title="GO2INC 4.0 Publicity"
                             iframe={false}

@@ -7,7 +7,7 @@ type VideoCardProps = {
     title: string;
     description: string;
     videoUrl: string;
-    iframe: boolean;
+    iframe?: boolean;
     className?: string;
 };
 
@@ -15,7 +15,7 @@ export function VideoCard({
     videoUrl,
     title = "go2inc",
     description = "go2inc",
-    iframe,
+    iframe = false,
     className,
 }: VideoCardProps) {
     return (
