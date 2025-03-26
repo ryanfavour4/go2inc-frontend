@@ -108,7 +108,7 @@ const Home = () => {
             <section className="body-font bg-primary/10 px-3 py-9">
                 <div className="container rounded-xl bg-white py-8">
                     <h3 className="m-auto max-w-sm text-center text-2xl font-semibold text-primary">
-                        GO2INC 4.0 Outreach
+                        GO2INC 4.0
                     </h3>
 
                     <div className="relative m-auto mb-10 mt-10 w-[90%] md:mt-0 lg:mt-8">
