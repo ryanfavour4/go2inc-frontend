@@ -8,7 +8,7 @@ import FooterSection from "./_components/footer-section";
 import HeroSection from "./_components/hero-section";
 import Image from "next/image";
 import Logo from "@/components/svg/logo";
-import Script from "next/script";
+// import Script from "next/script";
 
 const Home = () => {
     const targetLocations = [
@@ -105,7 +105,7 @@ const Home = () => {
                 </div>
             </section> */}
 
-            <section className="body-font bg-primary/10 px-3 py-9">
+            {/* <section className="body-font bg-primary/10 px-3 py-9">
                 <div className="container rounded-xl bg-white py-8">
                     <h3 className="m-auto max-w-sm text-center text-2xl font-semibold text-primary">
                         GO2INC 4.0
@@ -123,7 +123,7 @@ const Home = () => {
                         <Script src="https://player.vimeo.com/api/player.js" />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section id="about" className="body-font bg-primary/10 px-3 py-9">
                 <div className="container rounded-xl bg-white py-8">

@@ -1,9 +1,21 @@
+"use client";
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Logo from "@/components/svg/logo";
+import { getSession } from "@/lib/sessions/actions";
+import { SessionData } from "@/lib/sessions/config";
+import { IronSession } from "iron-session";
 import Link from "next/link";
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 
 export function HeaderNav() {
+    const [auth, setAuth] = useState<null | IronSession<SessionData>>(null);
+
+    useLayoutEffect(() => {
+        getSession().then((session) => {
+            setAuth(session);
+        });
+    }, []);
+
     return (
         <header className="shadow-md backdrop-blur-md">
             <div className="container mx-auto flex flex-row flex-wrap items-center justify-between p-2 md:justify-normal">
@@ -27,7 +39,10 @@ export function HeaderNav() {
                         Contact
                     </Link>
                 </nav>
-                <Link href={"/auth/login"} className="btn-primary w-fit px-6 py-1.5">
+                <Link
+                    href={auth?.isLoggedIn ? "/home" : "/auth/login"}
+                    className="btn-primary w-fit px-6 py-1.5"
+                >
                     Join Us
                 </Link>
             </div>

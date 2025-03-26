@@ -4,12 +4,23 @@ import Link from "next/link";
 import stockImage1 from "@/assets/images/stock-image-1.png";
 import stockImage2 from "@/assets/images/stock-image-2.png";
 import stockImage3 from "@/assets/images/stock-image-3.png";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { getSession } from "@/lib/sessions/actions";
+import { SessionData } from "@/lib/sessions/config";
+import { IronSession } from "iron-session";
 
 export default function HeroSection() {
+    const [auth, setAuth] = useState<null | IronSession<SessionData>>(null);
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const images = [stockImage1, stockImage2, stockImage3];
+
+    useLayoutEffect(() => {
+        getSession().then((session) => {
+            setAuth(session);
+        });
+    }, []);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -65,10 +76,16 @@ export default function HeroSection() {
                                     time. Be part of this mission today!
                                 </p>
                                 <div className="ml-auto flex w-full justify-center gap-4 md:w-fit md:justify-start">
-                                    <Link href="/auth/login" className="btn-primary w-fit px-8">
+                                    <Link
+                                        href={auth?.isLoggedIn ? "/home" : "/auth/login"}
+                                        className="btn-primary w-fit px-8"
+                                    >
                                         Join the training
                                     </Link>
-                                    <Link href="/videos" className="btn-white w-fit px-8">
+                                    <Link
+                                        href={auth?.isLoggedIn ? "/events" : "/auth/login"}
+                                        className="btn-white w-fit px-8"
+                                    >
                                         Register Outreach
                                     </Link>
                                 </div>
