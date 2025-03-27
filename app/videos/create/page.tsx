@@ -8,6 +8,7 @@ import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
 import Layouts from "@/layout/layout";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { useEffectOnce } from "react-use";
 
 export default function CreateVideo() {
@@ -50,6 +51,7 @@ export default function CreateVideo() {
             .then((res) => {
                 console.log(res);
                 router.push("/videos");
+                toast.success("Video uploaded successfully, please go to video page");
                 setLoading(false);
             })
             .catch((err) => {
