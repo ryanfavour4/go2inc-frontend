@@ -6,6 +6,7 @@ import EventCalender from "@/components/svg/event-calender";
 import File from "@/components/svg/file";
 import { postLogoutService } from "@/api-services/auth.service";
 import toast from "react-hot-toast";
+import Home from "@/components/svg/home";
 
 export type T_menuChildren = {
     title: string;
@@ -32,6 +33,11 @@ export default function useSidebar() {
             children: [
                 {
                     title: "Home",
+                    path: "/",
+                    icon: <Home className="text-2xl" />,
+                },
+                {
+                    title: "Main",
                     path: "/home",
                     icon: <DashboardSquares className="text-2xl" />,
                 },
