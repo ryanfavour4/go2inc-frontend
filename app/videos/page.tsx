@@ -2,11 +2,15 @@
 import Layouts from "@/layout/layout";
 import { useEffectOnce } from "react-use";
 import { getVideosService, VideosData } from "@/api-services/video.service";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { VideoCard } from "./video-card";
 import Link from "next/link";
+import { SessionData } from "@/lib/sessions/config";
+import { IronSession } from "iron-session";
+import { getSession } from "@/lib/sessions/actions";
 
 export default function Videos() {
+    const [auth, setAuth] = useState<null | IronSession<SessionData>>(null);
     const [loading, setLoading] = useState(false);
     const [videos, setVideos] = useState<VideosData[]>([]);
 
@@ -23,13 +27,21 @@ export default function Videos() {
             });
     });
 
+    useLayoutEffect(() => {
+        getSession().then((session) => {
+            setAuth(session);
+        });
+    }, []);
+
     return (
         <Layouts>
             <div className="">
                 <div className="flex items-center justify-end px-4 py-4">
-                    <Link className="btn-primary block w-fit px-6 py-2" href={"/videos/create"}>
-                        Create Video
-                    </Link>
+                    {auth?.user?.admin && (
+                        <Link className="btn-primary block w-fit px-6 py-2" href={"/videos/create"}>
+                            Create Video
+                        </Link>
+                    )}
                 </div>
                 <div className="container grid grid-cols-1 gap-5 px-4 pb-8 md:grid-cols-2 lg:grid-cols-3">
                     {loading && (

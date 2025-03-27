@@ -77,7 +77,7 @@ export default function HeroSection() {
                                 </p>
                                 <div className="ml-auto flex w-full justify-center gap-4 md:w-fit md:justify-start">
                                     <Link
-                                        href={auth?.isLoggedIn ? "/home" : "/auth/login"}
+                                        href={auth?.isLoggedIn ? "/videos" : "/auth/login"}
                                         className="btn-primary w-fit px-8"
                                     >
                                         Take the training

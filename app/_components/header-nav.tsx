@@ -40,7 +40,7 @@ export function HeaderNav() {
                     </Link>
                 </nav>
                 <Link
-                    href={auth?.isLoggedIn ? "/home" : "/auth/login"}
+                    href={auth?.isLoggedIn ? "/videos" : "/auth/login"}
                     className="btn-primary w-fit px-6 py-1.5"
                 >
                     Take Training
