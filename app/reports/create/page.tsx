@@ -75,7 +75,7 @@ export default function CreateReport() {
                                 />
                             </div>
                         </div>
-                        <div className="mt-5 md:mt-0">
+                        <div className="mt-5">
                             <label htmlFor="documentLink" className="block text-sm/6 font-medium">
                                 Document Link
                             </label>

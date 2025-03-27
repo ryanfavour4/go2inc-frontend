@@ -6,12 +6,22 @@ import LogoutDoorOut from "@/components/svg/logout-door-out";
 import { MenuItem } from "./menu-item";
 import React from "react";
 import Link from "next/link";
+import { LoadingPopUp } from "../loading";
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }: TLayoutProps) {
-    const { menus, dockSideBar, navListRef, clickedNavYPosition, setDockSideBar } = useSidebar();
+    const {
+        loading,
+        menus,
+        dockSideBar,
+        navListRef,
+        clickedNavYPosition,
+        setDockSideBar,
+        handleLogout,
+    } = useSidebar();
 
     return (
         <>
+            {loading && <LoadingPopUp />}
             <div
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 className={`${
@@ -68,7 +78,11 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: TLayoutProps) {
 
                             <hr className="mt-10" />
                             <li className="flex w-full cursor-pointer items-center justify-between gap-1 p-2 pl-5 text-sm text-secondary hover:bg-secondary/25">
-                                <Link href={"/auth/login"} className="flex items-center gap-1">
+                                <Link
+                                    href={"/auth/login"}
+                                    onClick={handleLogout}
+                                    className="flex items-center gap-1"
+                                >
                                     <LogoutDoorOut className="text-2xl font-bold" />
                                     <p className={`${!dockSideBar ? "inline" : "md:hidden"}`}>
                                         Logout

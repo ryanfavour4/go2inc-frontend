@@ -12,6 +12,18 @@ export const postLoginService = async (credentials: { email: string }) => {
     return response;
 };
 
+export const postLogoutService = async () => {
+    const response = await axios.post("/api/auth/signout");
+    const res = response.data;
+
+    if (res.status < 200 || res.status >= 300) {
+        const errorMessage = res.error?.message || res.message || "Something went wrong";
+        throw new Error(errorMessage);
+    }
+
+    return response;
+};
+
 export const postRegisterService = async (credentials: {
     email: string;
     fullname: string;

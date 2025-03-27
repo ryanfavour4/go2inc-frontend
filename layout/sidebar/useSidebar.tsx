@@ -4,6 +4,8 @@ import DashboardSquares from "@/components/svg/dashboard-squares";
 import Video from "@/components/svg/video";
 import EventCalender from "@/components/svg/event-calender";
 import File from "@/components/svg/file";
+import { postLogoutService } from "@/api-services/auth.service";
+import toast from "react-hot-toast";
 
 export type T_menuChildren = {
     title: string;
@@ -22,6 +24,7 @@ export type T_menu = {
 };
 
 export default function useSidebar() {
+    const [loading, setLoading] = useState(false);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [menus, _setMenu] = useState<T_menu[]>([
         {
@@ -58,6 +61,21 @@ export default function useSidebar() {
     const [clickedNavYPosition, setClickedNavYPosition] = useState<number>(0);
     const [dockSideBar, setDockSideBar] = useState(false);
 
+    const handleLogout = () => {
+        if (loading) return;
+        setLoading(true);
+        postLogoutService()
+            .then((res) => {
+                console.log(res);
+                toast("Logout successful");
+                setLoading(false);
+            })
+            .catch((err) => {
+                setLoading(false);
+                alert(err.message);
+            });
+    };
+
     useEffect(() => {
         const navList = navListRef.current;
 
@@ -73,16 +91,19 @@ export default function useSidebar() {
         };
         handleResize();
         window.addEventListener("resize", handleResize);
+
         return () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     return {
+        loading,
         menus,
         dockSideBar,
         navListRef,
         clickedNavYPosition,
+        handleLogout,
         setDockSideBar,
     };
 }
