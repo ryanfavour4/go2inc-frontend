@@ -21,7 +21,7 @@ export function VideoCard({
     return (
         <section>
             <div
-                className={`${className} max-w-md rounded-lg border border-primary bg-primary/10 p-2`}
+                className={`${className} max-w-md self-stretch rounded-lg border border-primary bg-primary/10 p-2`}
             >
                 {iframe ? (
                     <>

@@ -19,7 +19,12 @@ export default function Videos() {
         getVideosService({ category: 1, page: 1, pageSize: 10 })
             .then((res) => {
                 setLoading(false);
-                setVideos(res?.data?.videos);
+
+                const sortedVideos = res?.data?.videos.sort(
+                    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+                );
+
+                setVideos(sortedVideos);
             })
             .catch((err) => {
                 setLoading(false);
@@ -43,7 +48,7 @@ export default function Videos() {
                         </Link>
                     )}
                 </div>
-                <div className="container grid grid-cols-1 gap-5 px-4 pb-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="container grid grid-cols-1 gap-x-5 px-4 pb-8 md:grid-cols-2 lg:grid-cols-3">
                     {loading && (
                         <div className="row-span-12 flex h-full w-full items-center justify-center text-center md:col-span-2 lg:col-span-3">
                             <p>Loading...</p>
