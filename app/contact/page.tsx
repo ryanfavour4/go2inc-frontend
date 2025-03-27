@@ -81,7 +81,7 @@ export default function Contact() {
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                                <button className="btn-primary m-auto max-w-xs">Button</button>
+                                <button className="btn-primary m-auto max-w-xs">Submit</button>
                             </div>
                             <div className="mt-8 w-full border-t border-gray-200 p-2 pt-8 text-center">
                                 <a

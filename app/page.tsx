@@ -349,9 +349,9 @@ const Home = () => {
                         <div className="md:w-1/2 md:py-6 md:pr-10 lg:w-2/5">
                             {targetLocations.map((location) => {
                                 return (
-                                    <div key={location} className="relative flex pb-12">
+                                    <div key={location} className="relative flex pb-8">
                                         <div className="absolute inset-0 flex h-full w-10 items-center justify-center">
-                                            <div className="pointer-events-none h-full w-1 bg-gray-200"></div>
+                                            <div className="pointer-events-none h-20 w-1 bg-gray-200"></div>
                                         </div>
                                         <div className="relative z-10 inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-primary bg-white text-white shadow">
                                             <Logo className="w-10" />

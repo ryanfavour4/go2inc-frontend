@@ -13,8 +13,11 @@ export default function NotFound() {
                         <h1 className="mb-4 text-5xl font-extrabold tracking-tight text-primary lg:text-7xl">
                             404
                         </h1>
-                        <p className="mb-4 text-2xl font-bold tracking-tight text-secondary md:text-3xl">
+                        {/* <p className="mb-4 text-2xl font-bold tracking-tight text-secondary md:text-3xl">
                             Something&apos;s missing.
+                        </p> */}
+                        <p className="mb-4 text-2xl font-bold tracking-tight text-secondary md:text-3xl">
+                            Coming Soon.
                         </p>
                         <p className="mb-4 text-base font-light text-textcolor">
                             Sorry, we can&apos;t find that page. You&apos;ll find lots to explore on

@@ -32,7 +32,7 @@ export function HeaderNav() {
                     <Link href="/videos" className="hover:text-secondary">
                         Training Resources
                     </Link>
-                    <Link href="/report" className="hover:text-secondary">
+                    <Link href="/reports" className="hover:text-secondary">
                         Report
                     </Link>
                     <Link href="/contact" className="hover:text-secondary">

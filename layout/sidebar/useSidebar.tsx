@@ -1,6 +1,6 @@
 "use client";
 import { JSX, useEffect, useRef, useState } from "react";
-import DashboardSquares from "@/components/svg/dashboard-squares";
+// import DashboardSquares from "@/components/svg/dashboard-squares";
 import Video from "@/components/svg/video";
 import EventCalender from "@/components/svg/event-calender";
 import File from "@/components/svg/file";
@@ -36,12 +36,11 @@ export default function useSidebar() {
                     path: "/",
                     icon: <Home className="text-2xl" />,
                 },
-                {
-                    title: "Main",
-                    path: "/home",
-                    icon: <DashboardSquares className="text-2xl" />,
-                },
-
+                // {
+                //     title: "Main",
+                //     path: "/home",
+                //     icon: <DashboardSquares className="text-2xl" />,
+                // },
                 {
                     title: "Videos",
                     path: "/videos",
