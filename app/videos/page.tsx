@@ -44,6 +44,7 @@ export default function Videos() {
                                 title={video.title}
                                 videoUrl={video.link}
                                 key={video?.id}
+                                iframe={true}
                             />
                         ))}
                     {!loading && videos.length === 0 && (
