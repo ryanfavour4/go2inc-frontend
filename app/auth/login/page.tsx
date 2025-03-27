@@ -22,7 +22,7 @@ export default function Login() {
             .then((res) => {
                 console.log(res);
                 toast.success("Login successful");
-                router.push("/home");
+                router.push("/videos");
                 setLoading(false);
             })
             .catch((err) => {
