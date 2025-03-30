@@ -10,8 +10,8 @@ export default function Home() {
                 <div className="container grid grid-cols-1 gap-5 px-4 pb-8 md:grid-cols-5">
                     <div className="md:col-span-3">
                         <HomeVideoCard
-                            title="Go2Inc Training Pastor Lanre Alabi"
-                            description=""
+                            title="Church Planting and Growth with GO2INC 4.0"
+                            description="Pastor Lanre Alabi"
                             videoUrl="https://player.vimeo.com/video/1069630045?h=ec216667b3&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                             iframe={true}
                         />

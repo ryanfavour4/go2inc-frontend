@@ -6,6 +6,7 @@ import Input from "@/components/input";
 import Select from "@/components/select";
 import SpinnerSemicircle from "@/components/svg/spinner-semicircle";
 import Layouts from "@/layout/layout";
+import { convertVimeoUrl } from "@/utils/convertVimeoUrl";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
@@ -38,14 +39,27 @@ export default function CreateVideo() {
 
     const submitVideo = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!title.value) return toast.error("Title is required");
+        if (!link.value) return toast.error("Link is required");
+        if (!link.value.includes("vimeo")) return toast.error("Link must be a vimeo video");
+
         if (loading) return;
+        console.log({
+            category: category.value,
+            description: description.value,
+            isActive: isActive.value === "yes" ? true : false,
+            isRecorded: isRecorded.value === "yes" ? true : false,
+            link: convertVimeoUrl(link.value) || "",
+            title: title.value,
+        });
+
         setLoading(true);
         postVideoService({
             category: category.value,
             description: description.value,
             isActive: isActive.value === "yes" ? true : false,
             isRecorded: isRecorded.value === "yes" ? true : false,
-            link: link.value,
+            link: convertVimeoUrl(link.value) || "",
             title: title.value,
         })
             .then((res) => {
