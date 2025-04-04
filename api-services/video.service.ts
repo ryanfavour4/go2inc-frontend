@@ -1,5 +1,7 @@
+import { goTo } from "@/lib/navigate";
 import { objToQueryParams } from "@/utils/formatting";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export interface GetVideosServiceResponse {
     message: string;
@@ -38,6 +40,10 @@ export const getVideosService = async (credentials: {
 }) => {
     const response = await axios.get(`/api/video?${objToQueryParams(credentials)}`);
     const res = response.data;
+    if (res.error.statusCode === 401 || res.error.statusCode === 403) {
+        toast.error("Your session has expired. Redirecting to login...");
+        goTo("/auth/login");
+    }
 
     if (res.status < 200 || res.status >= 300) {
         const errorMessage = res.error?.message || res.message || "Something went wrong";

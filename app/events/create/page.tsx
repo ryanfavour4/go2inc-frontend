@@ -26,8 +26,8 @@ export default function CreateEvents() {
             eventDate: eventDate.value,
             expectedParticipants: Number(expectedParticipants.value),
         })
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 router.push("/events");
                 setLoading(false);
             })

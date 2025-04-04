@@ -1,9 +1,9 @@
 import { getSession, removeSession } from "@/lib/sessions/actions";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function POST(_req: Request) {
     try {
-        console.log(req);
         const session = await getSession();
         session.destroy();
         await removeSession();

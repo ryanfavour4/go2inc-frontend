@@ -21,14 +21,11 @@ export default function Register() {
     const router = useRouter();
 
     const toggleDesignation = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.checked);
-        console.log(e.target.value);
         if (e.target.checked) {
             setDesignation([...designation, e.target.value]);
         } else {
             setDesignation(designation.filter((item) => item !== e.target.value));
         }
-        console.log(designation);
     };
 
     const handleRegister = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,8 +40,8 @@ export default function Register() {
             zone: zone.value,
             designation: designation,
         })
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 toast.success("Login successful");
                 router.push("/videos");
                 setLoading(false);

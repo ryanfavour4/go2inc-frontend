@@ -26,8 +26,8 @@ export default function CreateReport() {
             documentLink: documentLink.value,
             videoLink: videoLink.value,
         })
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 router.push("/reports");
                 setLoading(false);
             })

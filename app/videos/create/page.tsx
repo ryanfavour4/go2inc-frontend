@@ -44,14 +44,6 @@ export default function CreateVideo() {
         if (!link.value.includes("vimeo")) return toast.error("Link must be a vimeo video");
 
         if (loading) return;
-        console.log({
-            category: category.value,
-            description: description.value,
-            isActive: isActive.value === "yes" ? true : false,
-            isRecorded: isRecorded.value === "yes" ? true : false,
-            link: convertVimeoUrl(link.value) || "",
-            title: title.value,
-        });
 
         setLoading(true);
         postVideoService({
@@ -62,8 +54,8 @@ export default function CreateVideo() {
             link: convertVimeoUrl(link.value) || "",
             title: title.value,
         })
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 router.push("/videos");
                 toast.success("Video uploaded successfully, please go to video page");
                 setLoading(false);

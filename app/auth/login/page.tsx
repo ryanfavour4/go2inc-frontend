@@ -19,8 +19,8 @@ export default function Login() {
         if (loading) return;
         setLoading(true);
         postLoginService({ email: email.value })
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 toast.success("Login successful");
                 router.push("/videos");
                 setLoading(false);

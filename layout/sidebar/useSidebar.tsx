@@ -70,8 +70,8 @@ export default function useSidebar() {
         if (loading) return;
         setLoading(true);
         postLogoutService()
-            .then((res) => {
-                console.log(res);
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            .then((_res) => {
                 toast("Logout successful");
                 setLoading(false);
             })
