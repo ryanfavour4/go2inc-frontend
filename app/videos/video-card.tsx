@@ -1,7 +1,7 @@
 "use client";
-import Download from "@/components/svg/download";
+// import Download from "@/components/svg/download";
 import Script from "next/script";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 type VideoCardProps = {
     title: string;
@@ -42,12 +42,12 @@ export function VideoCard({
                 <div className="flex flex-col gap-2 pt-4">
                     <div className="flex items-center justify-between border-b border-textcolor/25 pb-3 text-base font-semibold">
                         <h3>{title}</h3>
-                        <button
+                        {/* <button
                             onClick={() => toast("Coming soon!")}
                             className="btn w-fit bg-white/50 p-1.5"
                         >
                             <Download className="text-3xl" />
-                        </button>
+                        </button> */}
                     </div>
                     <p className="ellipsis-3 text-sm">{description}</p>
                 </div>
