@@ -40,7 +40,9 @@ export const getVideosService = async (credentials: {
 }) => {
     const response = await axios.get(`/api/video?${objToQueryParams(credentials)}`);
     const res = response.data;
-    if (res.error.statusCode === 401 || res.error.statusCode === 403) {
+    console.log(res);
+
+    if (res.error?.statusCode === 401 || res.error?.statusCode === 403) {
         toast.error("Your session has expired. Redirecting to login...");
         goTo("/auth/login");
     }
